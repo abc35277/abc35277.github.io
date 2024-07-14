@@ -191,6 +191,91 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/14/%E7%BB%99windows%E8%BD%AF%E4%BB%B6%E7%AD%BE%E5%90%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img.picgo.net/2024/07/12/11b7a2c79635e5aaab.png">
+      <meta itemprop="name" content="schunhui">
+      <meta itemprop="description" content="各种各样的内容">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="乱七八糟的发表">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/07/14/%E7%BB%99windows%E8%BD%AF%E4%BB%B6%E7%AD%BE%E5%90%8D/" class="post-title-link" itemprop="url">给windows软件签名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-07-14 18:51:02 / 修改时间：19:00:53" itemprop="dateCreated datePublished" datetime="2024-07-14T18:51:02+08:00">2024-07-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/windows/" itemprop="url" rel="index"><span itemprop="name">windows</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li><p>首先使用Makecert命令行工具生成pvk和cer文件如下命令</p>
+<p> <code>Makecert -sv vscode_signature.pvk -r -n &quot;CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US&quot; vscode_signature.cer  </code></p>
+</li>
+</ul>
+<p>请注意-n后面的双引号内的内容一定要和软件打包内的声明是已知的否则无法签名。</p>
+<ul>
+<li>使用Cert2spc生成spc文件</li>
+</ul>
+<p><code>Cert2spc vscode_signature.cer vscode_signature.spc</code></p>
+<ul>
+<li>使用pvk2pfx将pvk和spc导出pfx</li>
+</ul>
+<p><code>pvk2pfx -pvk vscode_signature.pvk -spc vscode_signature.spc -pfx vscode_signature.pfx -f</code></p>
+<ul>
+<li>使用pfx文件给软件签名</li>
+</ul>
+<p><code>SignTool sign /fd sha256 /a /f vscode_signature.pfx code_explorer_x64.appx</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/14/node.js%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -479,18 +564,18 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
