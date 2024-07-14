@@ -98,21 +98,12 @@
     <title>给windows软件签名</title>
     <url>/2024/07/14/%E7%BB%99windows%E8%BD%AF%E4%BB%B6%E7%AD%BE%E5%90%8D/</url>
     <content><![CDATA[<ul>
-<li><p>首先使用Makecert命令行工具生成pvk和cer文件如下命令</p>
-<p> <code>Makecert -sv vscode_signature.pvk -r -n &quot;CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US&quot; vscode_signature.cer  </code></p>
+<li><h3 id="首先使用Makecert命令行工具生成pvk和cer文件如下命令"><a href="#首先使用Makecert命令行工具生成pvk和cer文件如下命令" class="headerlink" title="首先使用Makecert命令行工具生成pvk和cer文件如下命令"></a>首先使用Makecert命令行工具生成pvk和cer文件如下命令</h3><h4 id="Makecert-sv-vscode-signature-pvk-r-n-“CN-Microsoft-Corporation-O-Microsoft-Corporation-L-Redmond-S-Washington-C-US”-vscode-signature-cer"><a href="#Makecert-sv-vscode-signature-pvk-r-n-“CN-Microsoft-Corporation-O-Microsoft-Corporation-L-Redmond-S-Washington-C-US”-vscode-signature-cer" class="headerlink" title="&#96;Makecert -sv vscode_signature.pvk -r -n “CN&#x3D;Microsoft Corporation, O&#x3D;Microsoft Corporation, L&#x3D;Redmond, S&#x3D;Washington, C&#x3D;US” vscode_signature.cer"></a>&#96;Makecert -sv vscode_signature.pvk -r -n “CN&#x3D;Microsoft Corporation, O&#x3D;Microsoft Corporation, L&#x3D;Redmond, S&#x3D;Washington, C&#x3D;US” vscode_signature.cer</h4><p> &#96;</p>
 <p>  请注意-n后面的双引号内的内容一定要和软件打包内的声明是已知的否则无法签名。</p>
 </li>
-</ul>
-<ul>
-<li><p>使用Cert2spc生成spc文件</p>
-<p>  <code>Cert2spc vscode_signature.cer vscode_signature.spc</code></p>
-</li>
-<li><p>使用pvk2pfx将pvk和spc导出pfx</p>
-<p>  <code>pvk2pfx -pvk vscode_signature.pvk -spc vscode_signature.spc -pfx vscode_signature.pfx -f</code></p>
-</li>
-<li><p>使用pfx文件给软件签名</p>
-<p>  <code>SignTool sign /fd sha256 /a /f vscode_signature.pfx code_explorer_x64.appx</code></p>
-</li>
+<li><h3 id="使用Cert2spc生成spc文件"><a href="#使用Cert2spc生成spc文件" class="headerlink" title="使用Cert2spc生成spc文件"></a>使用Cert2spc生成spc文件</h3><h4 id="Cert2spc-vscode-signature-cer-vscode-signature-spc"><a href="#Cert2spc-vscode-signature-cer-vscode-signature-spc" class="headerlink" title="Cert2spc vscode_signature.cer vscode_signature.spc"></a><code>Cert2spc vscode_signature.cer vscode_signature.spc</code></h4></li>
+<li><h3 id="使用pvk2pfx将pvk和spc导出pfx"><a href="#使用pvk2pfx将pvk和spc导出pfx" class="headerlink" title="使用pvk2pfx将pvk和spc导出pfx"></a>使用pvk2pfx将pvk和spc导出pfx</h3><h4 id="pvk2pfx-pvk-vscode-signature-pvk-spc-vscode-signature-spc-pfx-vscode-signature-pfx-f"><a href="#pvk2pfx-pvk-vscode-signature-pvk-spc-vscode-signature-spc-pfx-vscode-signature-pfx-f" class="headerlink" title="pvk2pfx -pvk vscode_signature.pvk -spc vscode_signature.spc -pfx vscode_signature.pfx -f"></a><code>pvk2pfx -pvk vscode_signature.pvk -spc vscode_signature.spc -pfx vscode_signature.pfx -f</code></h4></li>
+<li><h3 id="使用pfx文件给软件签名"><a href="#使用pfx文件给软件签名" class="headerlink" title="使用pfx文件给软件签名"></a>使用pfx文件给软件签名</h3><h4 id="SignTool-sign-fd-sha256-a-f-vscode-signature-pfx-code-explorer-x64-appx"><a href="#SignTool-sign-fd-sha256-a-f-vscode-signature-pfx-code-explorer-x64-appx" class="headerlink" title="SignTool sign /fd sha256 /a /f vscode_signature.pfx code_explorer_x64.appx"></a><code>SignTool sign /fd sha256 /a /f vscode_signature.pfx code_explorer_x64.appx</code></h4></li>
 </ul>
 ]]></content>
       <categories>
