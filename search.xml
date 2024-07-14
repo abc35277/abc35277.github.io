@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>PostgreSQL的下载安装与一些常规配置</title>
+    <url>/2024/07/14/PostgreSQL%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E4%B8%8E%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%84%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>开发环境初始化</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>pg</tag>
+        <tag>PostgreSQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows下的Python的安装与配置</title>
     <url>/2024/07/14/Windows%E4%B8%8B%E7%9A%84Python%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="Python简介"><a href="#Python简介" class="headerlink" title="Python简介"></a>Python简介</h2><blockquote>
@@ -13,6 +26,7 @@
 ]]></content>
       <categories>
         <category>学习</category>
+        <category>开发环境初始化</category>
       </categories>
       <tags>
         <tag>Python</tag>
@@ -54,6 +68,7 @@
 ]]></content>
       <categories>
         <category>学习</category>
+        <category>开发环境初始化</category>
       </categories>
       <tags>
         <tag>node.js</tag>
