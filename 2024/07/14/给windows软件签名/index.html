@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="首先使用Makecert命令行工具生成pvk和cer文件如下命令&#96;Makecert -sv vscode_signature.pvk -r -n “CN&#x3D;Microsoft Corporation, O&#x3D;Microsoft Corporation, L&#x3D;Redmond, S&#x3D;Washington, C&#x3D;US” vscode_signatu">
+  <meta name="description" content="首先使用Makecert命令行工具生成pvk和cer文件如下命令 Makecert -sv vscode_signature.pvk -r -n &quot;CN&#x3D;Microsoft Corporation, O&#x3D;Microsoft Corporation, L&#x3D;Redmond, S&#x3D;Washington, C&#x3D;US&quot; vscode_signature.cer   请注意-n后面的双引">
 <meta property="og:type" content="article">
 <meta property="og:title" content="给windows软件签名">
 <meta property="og:url" content="http://example.com/2024/07/14/%E7%BB%99windows%E8%BD%AF%E4%BB%B6%E7%AD%BE%E5%90%8D/index.html">
 <meta property="og:site_name" content="乱七八糟的发表">
-<meta property="og:description" content="首先使用Makecert命令行工具生成pvk和cer文件如下命令&#96;Makecert -sv vscode_signature.pvk -r -n “CN&#x3D;Microsoft Corporation, O&#x3D;Microsoft Corporation, L&#x3D;Redmond, S&#x3D;Washington, C&#x3D;US” vscode_signatu">
+<meta property="og:description" content="首先使用Makecert命令行工具生成pvk和cer文件如下命令 Makecert -sv vscode_signature.pvk -r -n &quot;CN&#x3D;Microsoft Corporation, O&#x3D;Microsoft Corporation, L&#x3D;Redmond, S&#x3D;Washington, C&#x3D;US&quot; vscode_signature.cer   请注意-n后面的双引">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-07-14T10:51:02.657Z">
-<meta property="article:modified_time" content="2024-07-14T14:07:54.623Z">
+<meta property="article:modified_time" content="2024-07-14T14:18:23.463Z">
 <meta property="article:author" content="schunhui">
 <meta property="article:tag" content="appx">
 <meta property="article:tag" content="windows">
@@ -220,7 +220,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-07-14 18:51:02 / 修改时间：22:07:54" itemprop="dateCreated datePublished" datetime="2024-07-14T18:51:02+08:00">2024-07-14</time>
+              <time title="创建时间：2024-07-14 18:51:02 / 修改时间：22:18:23" itemprop="dateCreated datePublished" datetime="2024-07-14T18:51:02+08:00">2024-07-14</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,12 +244,14 @@
 
       
         <ul>
-<li><h3 id="首先使用Makecert命令行工具生成pvk和cer文件如下命令"><a href="#首先使用Makecert命令行工具生成pvk和cer文件如下命令" class="headerlink" title="首先使用Makecert命令行工具生成pvk和cer文件如下命令"></a>首先使用Makecert命令行工具生成pvk和cer文件如下命令</h3><h4 id="Makecert-sv-vscode-signature-pvk-r-n-“CN-Microsoft-Corporation-O-Microsoft-Corporation-L-Redmond-S-Washington-C-US”-vscode-signature-cer"><a href="#Makecert-sv-vscode-signature-pvk-r-n-“CN-Microsoft-Corporation-O-Microsoft-Corporation-L-Redmond-S-Washington-C-US”-vscode-signature-cer" class="headerlink" title="&#96;Makecert -sv vscode_signature.pvk -r -n “CN&#x3D;Microsoft Corporation, O&#x3D;Microsoft Corporation, L&#x3D;Redmond, S&#x3D;Washington, C&#x3D;US” vscode_signature.cer"></a>&#96;Makecert -sv vscode_signature.pvk -r -n “CN&#x3D;Microsoft Corporation, O&#x3D;Microsoft Corporation, L&#x3D;Redmond, S&#x3D;Washington, C&#x3D;US” vscode_signature.cer</h4><p> &#96;</p>
-<p>  请注意-n后面的双引号内的内容一定要和软件打包内的声明是已知的否则无法签名。</p>
+<li><h3 id="首先使用Makecert命令行工具生成pvk和cer文件如下命令"><a href="#首先使用Makecert命令行工具生成pvk和cer文件如下命令" class="headerlink" title="首先使用Makecert命令行工具生成pvk和cer文件如下命令"></a>首先使用Makecert命令行工具生成pvk和cer文件如下命令</h3><p> <code>Makecert -sv vscode_signature.pvk -r -n &quot;CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US&quot; vscode_signature.cer  </code><br> 请注意-n后面的双引号内的内容一定要和软件打包内的声明是已知的否则无法签名。</p>
 </li>
-<li><h3 id="使用Cert2spc生成spc文件"><a href="#使用Cert2spc生成spc文件" class="headerlink" title="使用Cert2spc生成spc文件"></a>使用Cert2spc生成spc文件</h3><h4 id="Cert2spc-vscode-signature-cer-vscode-signature-spc"><a href="#Cert2spc-vscode-signature-cer-vscode-signature-spc" class="headerlink" title="Cert2spc vscode_signature.cer vscode_signature.spc"></a><code>Cert2spc vscode_signature.cer vscode_signature.spc</code></h4></li>
-<li><h3 id="使用pvk2pfx将pvk和spc导出pfx"><a href="#使用pvk2pfx将pvk和spc导出pfx" class="headerlink" title="使用pvk2pfx将pvk和spc导出pfx"></a>使用pvk2pfx将pvk和spc导出pfx</h3><h4 id="pvk2pfx-pvk-vscode-signature-pvk-spc-vscode-signature-spc-pfx-vscode-signature-pfx-f"><a href="#pvk2pfx-pvk-vscode-signature-pvk-spc-vscode-signature-spc-pfx-vscode-signature-pfx-f" class="headerlink" title="pvk2pfx -pvk vscode_signature.pvk -spc vscode_signature.spc -pfx vscode_signature.pfx -f"></a><code>pvk2pfx -pvk vscode_signature.pvk -spc vscode_signature.spc -pfx vscode_signature.pfx -f</code></h4></li>
-<li><h3 id="使用pfx文件给软件签名"><a href="#使用pfx文件给软件签名" class="headerlink" title="使用pfx文件给软件签名"></a>使用pfx文件给软件签名</h3><h4 id="SignTool-sign-fd-sha256-a-f-vscode-signature-pfx-code-explorer-x64-appx"><a href="#SignTool-sign-fd-sha256-a-f-vscode-signature-pfx-code-explorer-x64-appx" class="headerlink" title="SignTool sign /fd sha256 /a /f vscode_signature.pfx code_explorer_x64.appx"></a><code>SignTool sign /fd sha256 /a /f vscode_signature.pfx code_explorer_x64.appx</code></h4></li>
+<li><h3 id="使用Cert2spc生成spc文件"><a href="#使用Cert2spc生成spc文件" class="headerlink" title="使用Cert2spc生成spc文件"></a>使用Cert2spc生成spc文件</h3><p> <code>Cert2spc vscode_signature.cer vscode_signature.spc</code></p>
+</li>
+<li><h3 id="使用pvk2pfx将pvk和spc导出pfx"><a href="#使用pvk2pfx将pvk和spc导出pfx" class="headerlink" title="使用pvk2pfx将pvk和spc导出pfx"></a>使用pvk2pfx将pvk和spc导出pfx</h3><p> <code>pvk2pfx -pvk vscode_signature.pvk -spc vscode_signature.spc -pfx vscode_signature.pfx -f</code></p>
+</li>
+<li><h3 id="使用pfx文件给软件签名"><a href="#使用pfx文件给软件签名" class="headerlink" title="使用pfx文件给软件签名"></a>使用pfx文件给软件签名</h3><p> <code>SignTool sign /fd sha256 /a /f vscode_signature.pfx code_explorer_x64.appx</code></p>
+</li>
 </ul>
 
     </div>
@@ -332,7 +334,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E4%BD%BF%E7%94%A8Makecert%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E7%94%9F%E6%88%90pvk%E5%92%8Ccer%E6%96%87%E4%BB%B6%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">首先使用Makecert命令行工具生成pvk和cer文件如下命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Makecert-sv-vscode-signature-pvk-r-n-%E2%80%9CCN-Microsoft-Corporation-O-Microsoft-Corporation-L-Redmond-S-Washington-C-US%E2%80%9D-vscode-signature-cer"><span class="nav-number">1.1.</span> <span class="nav-text">&#96;Makecert -sv vscode_signature.pvk -r -n “CN&#x3D;Microsoft Corporation, O&#x3D;Microsoft Corporation, L&#x3D;Redmond, S&#x3D;Washington, C&#x3D;US” vscode_signature.cer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Cert2spc%E7%94%9F%E6%88%90spc%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">使用Cert2spc生成spc文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Cert2spc-vscode-signature-cer-vscode-signature-spc"><span class="nav-number">2.1.</span> <span class="nav-text">Cert2spc vscode_signature.cer vscode_signature.spc</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8pvk2pfx%E5%B0%86pvk%E5%92%8Cspc%E5%AF%BC%E5%87%BApfx"><span class="nav-number">3.</span> <span class="nav-text">使用pvk2pfx将pvk和spc导出pfx</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pvk2pfx-pvk-vscode-signature-pvk-spc-vscode-signature-spc-pfx-vscode-signature-pfx-f"><span class="nav-number">3.1.</span> <span class="nav-text">pvk2pfx -pvk vscode_signature.pvk -spc vscode_signature.spc -pfx vscode_signature.pfx -f</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8pfx%E6%96%87%E4%BB%B6%E7%BB%99%E8%BD%AF%E4%BB%B6%E7%AD%BE%E5%90%8D"><span class="nav-number">4.</span> <span class="nav-text">使用pfx文件给软件签名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SignTool-sign-fd-sha256-a-f-vscode-signature-pfx-code-explorer-x64-appx"><span class="nav-number">4.1.</span> <span class="nav-text">SignTool sign &#x2F;fd sha256 &#x2F;a &#x2F;f vscode_signature.pfx code_explorer_x64.appx</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E4%BD%BF%E7%94%A8Makecert%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E7%94%9F%E6%88%90pvk%E5%92%8Ccer%E6%96%87%E4%BB%B6%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">首先使用Makecert命令行工具生成pvk和cer文件如下命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Cert2spc%E7%94%9F%E6%88%90spc%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">使用Cert2spc生成spc文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8pvk2pfx%E5%B0%86pvk%E5%92%8Cspc%E5%AF%BC%E5%87%BApfx"><span class="nav-number">3.</span> <span class="nav-text">使用pvk2pfx将pvk和spc导出pfx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8pfx%E6%96%87%E4%BB%B6%E7%BB%99%E8%BD%AF%E4%BB%B6%E7%AD%BE%E5%90%8D"><span class="nav-number">4.</span> <span class="nav-text">使用pfx文件给软件签名</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
