@@ -11,7 +11,7 @@
 <h4 id="环境变量的一些知识"><a href="#环境变量的一些知识" class="headerlink" title="环境变量的一些知识"></a>环境变量的一些知识</h4><blockquote>
 <p>环境变量其实是注册表里的一些特定信息，所以有些同学也可以使用注册表来修改。<br>windows在命令行窗口执行命令的时候会优先在当前目录下去查找是否有对应的软件，如果没有会去公共目录里去查找也就是说各个path。</p>
 </blockquote>
-<h3 id="1-PostgreSQL的一些基本命令"><a href="#1-PostgreSQL的一些基本命令" class="headerlink" title="1. PostgreSQL的一些基本命令"></a>1. PostgreSQL的一些基本命令</h3><ul>
+<h3 id="2-PostgreSQL的一些基本命令"><a href="#2-PostgreSQL的一些基本命令" class="headerlink" title="2. PostgreSQL的一些基本命令"></a>2. PostgreSQL的一些基本命令</h3><ul>
 <li>初始化数据库目录并初始化管理员账号<br><code>initdb -D xxx --no-locale -U postgres -W</code><br>这块之所以是<code>--no-locale</code>因为简体中文环境的问题在windows下有一些问题。</li>
 <li>启动数据库<br><code>pg_ctl -D xxx start -p 65001</code></li>
 <li>停止数据库<br><code>pg_ctl -D xxx stop -p 65001</code></li>
@@ -65,6 +65,30 @@
 ]]></content>
   </entry>
   <entry>
+    <title>node.js的安装与使用</title>
+    <url>/2024/07/14/node.js%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="Node-js的安装与配置"><a href="#Node-js的安装与配置" class="headerlink" title="Node.js的安装与配置"></a>Node.js的安装与配置</h1><p><a href="https://nodejs.org/zh-cn">[Node.js官网]</a></p>
+<p><a href="https://nodejs.org/dist/v20.15.1/node-v20.15.1-x64.msi">20.15.1版本下载链接</a></p>
+<p><a href="https://nodejs.org/zh-cn/download/prebuilt-binaries">zip包下载</a></p>
+<p>设置全局安装文件夹</p>
+<figure class="highlight console"><table><tr><td class="code"><pre><span class="line">npm config set prefix &quot;F:\dev\env\node\node_global&quot;</span><br></pre></td></tr></table></figure>
+
+<p>设置全局缓存文件夹</p>
+<figure class="highlight console"><table><tr><td class="code"><pre><span class="line">npm config set cache &quot;F:\dev\env\node\node_cache&quot;</span><br></pre></td></tr></table></figure>
+<p>安装cnpm到本地</p>
+<figure class="highlight console"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+<p>增加node.js文件夹的路径到path环境变量</p>
+<p>增加node.js文件夹下的node_global到path（这样就可以直接在命令行下访问比如说cnpm了）</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>开发环境初始化</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>给windows软件签名</title>
     <url>/2024/07/14/%E7%BB%99windows%E8%BD%AF%E4%BB%B6%E7%AD%BE%E5%90%8D/</url>
     <content><![CDATA[<ul>
@@ -91,30 +115,6 @@
       <tags>
         <tag>appx</tag>
         <tag>windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>node.js的安装与使用</title>
-    <url>/2024/07/14/node.js%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="Node-js的安装与配置"><a href="#Node-js的安装与配置" class="headerlink" title="Node.js的安装与配置"></a>Node.js的安装与配置</h1><p><a href="https://nodejs.org/zh-cn">[Node.js官网]</a></p>
-<p><a href="https://nodejs.org/dist/v20.15.1/node-v20.15.1-x64.msi">20.15.1版本下载链接</a></p>
-<p><a href="https://nodejs.org/zh-cn/download/prebuilt-binaries">zip包下载</a></p>
-<p>设置全局安装文件夹</p>
-<figure class="highlight console"><table><tr><td class="code"><pre><span class="line">npm config set prefix &quot;F:\dev\env\node\node_global&quot;</span><br></pre></td></tr></table></figure>
-
-<p>设置全局缓存文件夹</p>
-<figure class="highlight console"><table><tr><td class="code"><pre><span class="line">npm config set cache &quot;F:\dev\env\node\node_cache&quot;</span><br></pre></td></tr></table></figure>
-<p>安装cnpm到本地</p>
-<figure class="highlight console"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
-<p>增加node.js文件夹的路径到path环境变量</p>
-<p>增加node.js文件夹下的node_global到path（这样就可以直接在命令行下访问比如说cnpm了）</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>开发环境初始化</category>
-      </categories>
-      <tags>
-        <tag>node.js</tag>
       </tags>
   </entry>
 </search>
