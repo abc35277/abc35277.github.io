@@ -268,6 +268,110 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/14/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8hexo%E5%8F%91%E5%B8%83%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%EF%BC%88%E6%AD%A4%E5%A4%84%E4%BB%A5github%E4%B8%BA%E4%BE%8B%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://img.picgo.net/2024/07/12/11b7a2c79635e5aaab.png">
+      <meta itemprop="name" content="schunhui">
+      <meta itemprop="description" content="各种各样的内容">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="乱七八糟的发表">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/07/14/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8hexo%E5%8F%91%E5%B8%83%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%EF%BC%88%E6%AD%A4%E5%A4%84%E4%BB%A5github%E4%B8%BA%E4%BE%8B%EF%BC%89/" class="post-title-link" itemprop="url">如何使用hexo发布个人静态博客（此处以github为例）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-07-14 16:07:21" itemprop="dateCreated datePublished" datetime="2024-07-14T16:07:21+08:00">2024-07-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-07-15 01:01:57" itemprop="dateModified" datetime="2024-07-15T01:01:57+08:00">2024-07-15</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="什么是hexo"><a href="#什么是hexo" class="headerlink" title="什么是hexo"></a>什么是hexo</h2><blockquote>
+<h3 id="hexo是一个快速、简单且强大的md转静态网页的框架，他支持很多主题且可以在github-page上部署。"><a href="#hexo是一个快速、简单且强大的md转静态网页的框架，他支持很多主题且可以在github-page上部署。" class="headerlink" title="hexo是一个快速、简单且强大的md转静态网页的框架，他支持很多主题且可以在github.page上部署。"></a>hexo是一个快速、简单且强大的md转静态网页的框架，他支持很多主题且可以在github.page上部署。</h3><h3 id="hexo是一个node-js上面的组件"><a href="#hexo是一个node-js上面的组件" class="headerlink" title="hexo是一个node.js上面的组件"></a>hexo是一个node.js上面的组件</h3></blockquote>
+<h2 id="如下下载hexo"><a href="#如下下载hexo" class="headerlink" title="如下下载hexo"></a>如下下载hexo</h2><p>下载主要分以下两步：</p>
+<ol>
+<li><p>先要下载node.js因为hexo就是node.js上面的组件<br>这个</p>
+</li>
+<li><p>使用node.js上面的包管理器npm安装<br>下面指令在命令行中运行将会使hexo安装到全局的安装文件夹中<br><code>npm install hexo-cli -g</code></p>
+</li>
+<li><p>github上面新建仓库，仓库名称一定要是<code>username.github.io</code>名字只能是这个不能乱起(username是github用户名)。</p>
+</li>
+<li><p>使用<code>hexo init  blog</code>命令初始化本地hexo博客文件夹。  </p>
+</li>
+<li><p>进入blog目录后打开命令行执行<code>npm install</code>还原所需要的组件。</p>
+</li>
+<li><p>执行<code>npm install hexo-deployer-git --save</code>安装hexo的快速部署工具。</p>
+</li>
+<li><p>使用<code>hexo new tags xxx</code>新建标签</p>
+</li>
+<li><p>使用<code>hexo new categories xxx</code>新建分类</p>
+</li>
+<li><p>使用<code>hexo new page xxxx</code>新建博客文章，默认会在<code>_post</code>中生成一个同名的md文件。</p>
+</li>
+<li><p>修改_config.yml文件，此文件由上一步<code>hexo init</code>自动生成。  </p>
+<h3 id="下面是yml文件的几处我认为有意义且关键的修改"><a href="#下面是yml文件的几处我认为有意义且关键的修改" class="headerlink" title="下面是yml文件的几处我认为有意义且关键的修改"></a>下面是yml文件的几处我认为有意义且关键的修改</h3> <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">博客标题</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&#x27;博客副标题&#x27;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&#x27;头像处的描述&#x27;</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line"><span class="comment">#启用搜索(默认没有这些需要手工添加此节点)</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span> <span class="comment">#此处默认是master不写这个键也可以</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br></pre></td></tr></table></figure></li>
+<li><p>从<code>github</code>上或其他指定的地方<code>clone</code>下来主题到<code>themes</code>文件夹中。</p>
+</li>
+<li><p>在<code>hexo</code>的配置文件中修改节点<code>theme</code>为<code>theme: next</code>启用主题 **(此处以next主题为例)**。</p>
+</li>
+<li><p>修改<code>themes</code>文件夹下的<code>next</code>文件夹下的主题配置文件<code>_config.yml</code></p>
+</li>
+<li><p>使用<code>hexo -g</code>将文件生成为html静态网页</p>
+</li>
+<li><p>使用<code>hexo -s</code>命令启动本地服务预览。</p>
+</li>
+<li><p>使用懒人指令<code>hexo clean &amp;&amp; hexo g d</code>清理当前网页，生成新的网页并部署到github上，前面修改的yml文件中的<code>repo: git@github.com:username/username.github.io.git</code>这个时候就起到了作用。</p>
+</li>
+<li><p>在浏览器中打开链接<code>username.github.io</code>即可打开刚刚部署的网页了。</p>
+</li>
+</ol>
+<h2 id="忘记了一个事儿了，下面的是分类和标签文件的头信息，一开始我没有修改结果分类就不显示。"><a href="#忘记了一个事儿了，下面的是分类和标签文件的头信息，一开始我没有修改结果分类就不显示。" class="headerlink" title="忘记了一个事儿了，下面的是分类和标签文件的头信息，一开始我没有修改结果分类就不显示。"></a>忘记了一个事儿了，下面的是分类和标签文件的头信息，一开始我没有修改结果分类就不显示。</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># categories文件夹下的index.md的头信息。</span></span><br><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2024-07-14 12:42:22</span><br><span class="line">type: categories</span><br><span class="line"><span class="section">layout: categories</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"><span class="section"># tags文件夹下的index.md的头信息。</span></span><br><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2024-07-14 12:42:22</span><br><span class="line">type: tags</span><br><span class="line"><span class="section">layout: tags</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/14/PostgreSQL%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E4%B8%8E%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%84%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -651,7 +755,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -664,7 +768,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
