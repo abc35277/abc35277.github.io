@@ -65,21 +65,20 @@
     <content><![CDATA[<ul>
 <li><p>首先使用Makecert命令行工具生成pvk和cer文件如下命令</p>
 <p> <code>Makecert -sv vscode_signature.pvk -r -n &quot;CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US&quot; vscode_signature.cer  </code></p>
+<p>  请注意-n后面的双引号内的内容一定要和软件打包内的声明是已知的否则无法签名。</p>
 </li>
 </ul>
-<p>请注意-n后面的双引号内的内容一定要和软件打包内的声明是已知的否则无法签名。</p>
 <ul>
-<li>使用Cert2spc生成spc文件</li>
+<li><p>使用Cert2spc生成spc文件</p>
+<p>  <code>Cert2spc vscode_signature.cer vscode_signature.spc</code></p>
+</li>
+<li><p>使用pvk2pfx将pvk和spc导出pfx</p>
+<p>  <code>pvk2pfx -pvk vscode_signature.pvk -spc vscode_signature.spc -pfx vscode_signature.pfx -f</code></p>
+</li>
+<li><p>使用pfx文件给软件签名</p>
+<p>  <code>SignTool sign /fd sha256 /a /f vscode_signature.pfx code_explorer_x64.appx</code></p>
+</li>
 </ul>
-<p><code>Cert2spc vscode_signature.cer vscode_signature.spc</code></p>
-<ul>
-<li>使用pvk2pfx将pvk和spc导出pfx</li>
-</ul>
-<p><code>pvk2pfx -pvk vscode_signature.pvk -spc vscode_signature.spc -pfx vscode_signature.pfx -f</code></p>
-<ul>
-<li>使用pfx文件给软件签名</li>
-</ul>
-<p><code>SignTool sign /fd sha256 /a /f vscode_signature.pfx code_explorer_x64.appx</code></p>
 ]]></content>
       <categories>
         <category>windows</category>
